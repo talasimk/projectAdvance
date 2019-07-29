@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Binomial heap</a>
+         </nav>
+        <div class="container-fluid" style="padding-left: -20px">
+            <div class="row">
+            <nav class="sidebar-sticky bg-dark navbar-dark navbar-expand-md" style="width: 300px; padding: 15px">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto flex-column">
+                        <form>
+                            <div class="form-group">
+                                <label class="text-white">Insert new element</label>	&nbsp	&nbsp	&nbsp
+                                <div class="row">
+                                <input type="number" class="form-control small" id="insert_input"  style="width: 200px" placeholder="Enter element">	&nbsp	&nbsp	&nbsp
+                                <button type="button" class="btn btn-info" onclick="insert_visualization()">Insert</button>	&nbsp	&nbsp	&nbsp
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <label class="text-white">Decrease key</label>	&nbsp	&nbsp	&nbsp
+                                <div class="row">
+                                    <input type="number" class="form-control" id="key_input"  style="width: 130px" placeholder="key">	&nbsp	&nbsp	&nbsp
+                                    <input type="number" class="form-control" id="new_value_input"  style="width: 130px" placeholder="new value">	&nbsp	&nbsp	&nbsp
+                                    <br></br><button type="button" class="btn btn-info" onclick="decrease_key_vis()">Decrease</button>	&nbsp	&nbsp	&nbsp
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-white">Delete element</label>	&nbsp	&nbsp	&nbsp
+                                <div class="row">
+                                    <input type="number" class="form-control small" id="delete_input"  style="width: 200px" placeholder="Enter element to delete">	&nbsp	&nbsp	&nbsp
+                                    <button type="button" class="btn btn-info" onclick="delete_visualization()">Delete</button>	&nbsp	&nbsp	&nbsp
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="row">
+                                    <button type="button" class="btn btn-info" onclick="find_min_visualization()">Find minimal element</button>	&nbsp	&nbsp	&nbsp
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="row">
+                                    <button type="button" class="btn btn-info" onclick="extract_min_visualization()">Extract minimal element</button>	&nbsp	&nbsp	&nbsp
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="row">
+                                    <button type="button" class="btn btn-info" onclick="clear_visualization()">Clear heap</button>	&nbsp	&nbsp	&nbsp
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                &nbsp	&nbsp	&nbsp
+                                <label class="text-white">Speed</label>
+                                &nbsp	&nbsp	&nbsp
+                                <select class="form-control" onchange="change_speed()" style="width: 100px" id="animation_speed">
+                                    <option>normal</option>
+                                    <option>very slow</option>
+                                    <option>slow</option>
+                                    <option>fast</option>
+                                    <option>very fast</option>
+                                </select> &nbsp	&nbsp
+                                <button type="button" class="btn btn-primary" id = "mode_changer" onclick="change_step_mode()">Step mode on</button>
+
+
+
+                            </div>
+                            &nbsp	&nbsp	&nbsp<button type="button" class="btn btn-primary" id = "back" onclick="step_back()"></span>Step back</button> &nbsp	&nbsp
+                            <button type="button" class="btn btn-primary" id = forward" onclick="step_forward()">Step forward</button>
+                            <div style="height: 20px"></div>
+                        </form>
+
+                    </ul>
+                </div>
+            </nav>
+                <div id="svg_div"></div>
+    </div>
+</div>
+<script src="logic.js"></script>
+</body>
+</html>
